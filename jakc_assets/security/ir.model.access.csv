@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_itms_asset_type_manager,itms.asset.type.manager,model_asset_type,base.group_itms_manager,1,1,1,1
+access_itms_asset_status_manager,itms.asset.status.manager,model_asset_status,base.group_itms_manager,1,1,1,1
+access_itms_asset_location_manager,itms.asset.location.manager,model_asset_location,base.group_itms_manager,1,1,1,1
+access_itms_asset_assets_manager,itms.asset.assets.manager,model_asset_assets,base.group_itms_manager,1,1,1,1
+access_itms_asset_assets_memory_manager,itms.asset.assets.memory.manager,model_asset_assets_memory,base.group_itms_manager,1,1,1,1
+access_itms_asset_assets_disk_manager,itms.asset.assets.disk.manager,model_asset_assets_disk,base.group_itms_manager,1,1,1,1
+access_itms_asset_assets_software_manager,itms.asset.assets.software.manager,model_asset_assets_software,base.group_itms_manager,1,1,1,1
+access_itms_asset_maintenance_manager,itms.asset.maintenance.manager,model_asset_maintenance,base.group_itms_manager,1,1,1,1
+access_itms_asset_type_operator,itms.asset.type.operator,model_asset_type,base.group_itms_operator,1,0,0,0
+access_itms_asset_status_operator,itms.asset.status.operator,model_asset_status,base.group_itms_operator,1,0,0,0
+access_itms_asset_location_operator,itms.asset.location.operator,model_asset_location,base.group_itms_operator,1,0,0,0
+access_itms_asset_assets_operator,itms.asset.assets.operator,model_asset_assets,base.group_itms_operator,1,0,0,0
+access_itms_asset_assets_memory_operator,itms.asset.assets.memory.operator,model_asset_assets_memory,base.group_itms_operator,1,0,0,0
+access_itms_asset_assets_disk_operator,itms.asset.assets.disk.operator,model_asset_assets_disk,base.group_itms_operator,1,0,0,0
+access_itms_asset_assets_software_operator,itms.asset.assets.software.operator,model_asset_assets_software,base.group_itms_operator,1,0,0,0
+access_itms_asset_maintenance_operator,itms.asset.maintenance.operator,model_asset_maintenance,base.group_itms_operator,1,0,0,0

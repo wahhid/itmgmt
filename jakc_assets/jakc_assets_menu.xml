@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<openerp>
+    <data>
+        
+        
+        <!-- ASSETS/MENU -->                
+        <menuitem name="Assets" id="base.assets_menu" parent="jakc_itms.itms_main_menu"/>
+        <menuitem name="Assets Report" id="base.assets_report_menu" parent="jakc_itms.itms_main_menu"/>
+        
+        <menuitem id="asset_type_menu" name="Type" parent="base.assets_menu"  action="action_asset_type" sequence="1"/>        
+        <menuitem id="asset_status_menu" name="Status" parent="base.assets_menu"  action="action_asset_status" sequence="2"/> 
+        <menuitem id="asset_location_menu" name="Location" parent="base.assets_menu"  action="action_asset_location" sequence="3"/> 
+        <menuitem id="asset_software_menu" name="Software" parent="base.assets_menu"  action="action_asset_software" sequence="4"/> 
+        <menuitem id="asset_assets_menu" name="Assets" parent="base.assets_menu"  action="action_asset_assets" sequence="5"/>
+        
+        <!-- Asset Reporting Menu -->        
+        <menuitem name="Assets Report" id="itms_assets_report_menu" parent="base.assets_report_menu" action="action_assets_report_form"/>        
+        
+        
+    </data>
+</openerp>
+        

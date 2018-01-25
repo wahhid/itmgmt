@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_itms_company_manager,itms.company.manager,model_itms_company,base.group_itms_manager,1,1,1,1
+access_itms_vendor_manager,itms.vendor.manager,model_itms_vendor,base.group_itms_manager,1,1,1,1
+access_itms_department_manager,itms.department.manager,model_hr_department,base.group_itms_manager,1,0,0,0
+access_itms_company_operator,itms.company.operator,model_itms_company,base.group_itms_operator,1,0,0,0
+access_itms_vendor_operator,itms.vendor.operator,model_itms_vendor,base.group_itms_operator,1,0,0,0
+access_itms_department_operator,itms.department.operator,model_hr_department,base.group_itms_operator,1,0,0,0

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<openerp>
+    <data>
+	
+        
+        <!-- ASSETS/TYPE -->
+		
+        <record model="ir.ui.view" id="view_asset_type_form">
+            <field name="name">asset.type.form</field>
+            <field name="model">asset.type</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Asset Type">  
+                    <group>                            
+                        <field name="type_id"/>         
+                        <field name="name"/>
+                        <field name="iface_maintenance"/>
+                        <field name="iface_pi"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_asset_type_tree">
+            <field name="name">asset.type.tree</field>
+            <field name="model">asset.type</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Asset Type">
+                    <field name="type_id"/>
+                    <field name="name"/>
+                    <field name="iface_maintenance"/>
+                    <field name="iface_pi"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- ASSETS/STATUS -->
+		
+        <record model="ir.ui.view" id="view_asset_status_form">
+            <field name="name">asset.status.form</field>
+            <field name="model">asset.status</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Asset Status">  
+                    <group>                            
+                        <field name="name"/>                            
+                    </group>
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_asset_status_tree">
+            <field name="name">asset.status.tree</field>
+            <field name="model">asset.status</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Asset Status">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+
+        <!-- ASSETS/LOCATION -->
+		
+        <record model="ir.ui.view" id="view_asset_location_form">
+            <field name="name">asset.location.form</field>
+            <field name="model">asset.location</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Asset Location">  
+                    <group>                            
+                        <field name="name"/>                            
+                    </group>
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_asset_location_tree">
+            <field name="name">asset.location.tree</field>
+            <field name="model">asset.location</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Asset Location">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+                                
+                                
+        <!-- ASSETS/SOFTWARE -->
+		
+        <record model="ir.ui.view" id="view_asset_software_form">
+            <field name="name">asset.software.form</field>
+            <field name="model">asset.software</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Asset Software">  
+                    <group>                            
+                        <field name="name"/>
+                        <field name="managed"/>                                                    
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Assets">
+                            <field name="assets_ids" widget="one2many_list">
+                                <tree string="Assets">
+                                    <field name="assets_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_asset_software_tree">
+            <field name="name">asset.software.tree</field>
+            <field name="model">asset.software</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Asset Software">
+                    <field name="name"/>		
+                    <field name="managed"/>		
+                </tree>
+            </field>
+        </record>
+                                        
+        <!-- ASSETS/ASSETS -->
+		
+        <record model="ir.ui.view" id="view_asset_assets_form">
+            <field name="name">asset.assets.form</field>
+            <field name="model">asset.assets</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Assets">  
+                    <group colspan="4">                            
+                        <field name="barcode"/>                        
+                        <field name="type"/>
+                        <field name="status"/>
+                        <field name="location"/>
+                        <field name="label"/>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Product">
+                            <field name="model"/>
+                            <field name="serial_number"/>
+                            <field name="vendor"/>
+                        </page>
+                        <page string="Purchase">
+                            <field name="purchase_order"/>
+                            <field name="purchase_date"/>
+                            <field name="supplier" domain="[('supplier','=',True)]"/>
+                            <field name="warranty"/>
+                            <field name="decomission_date"/>
+                        </page>
+                        <page string="Owner">
+                            <field name="company"/>
+                            <field name="department"/>
+                            <field name="owner"/>
+                            <field name="login_name"/>
+                        </page>
+                        <page string="Maintenance">
+                            <group>
+                                <field name="ismaintenance"/>
+                                <field name="maint_owner" attrs="{'required':[('ismaintenance','=',True)]}"/>
+                                <field name="repeat" attrs="{'required':[('ismaintenance','=',True)]}"/>
+                                <field name="maint_day" attrs="{'required':[('ismaintenance','=',True)]}"/>
+                                <field name="maint_month" attrs="{'required':[('ismaintenance','=',True)]}"/>
+                                <field name="maint_date"/>
+                            </group>
+                            <group>
+                                <field name="ispi"/>
+                                <field name="pi_owner" attrs="{'required':[('ispi','=',True)]}"/>
+                                <field name="pi_repeat" attrs="{'required':[('ispi','=',True)]}"/>
+                                <field name="pi_day" attrs="{'required':[('ispi','=',True)]}"/>
+                                <field name="pi_month" attrs="{'required':[('ispi','=',True)]}"/>
+                                <field name="pi_date"/>
+                            </group>
+                        </page>
+
+                        <page string="Image">
+                            <field name="image1" widget="image" img_height="150" img_width="200"/>
+                            <field name="image2" widget="image" img_height="150" img_width="200"/>
+                            <field name="image3" widget="image" img_height="150" img_width="200"/>
+                            <field name="image4" widget="image" img_height="150" img_width="200"/>
+                            <field name="image5" widget="image" img_height="150" img_width="200"/>
+                        </page>
+                        <page string="Hardware">
+                            <field name="name" colspan="4"/>
+                            <field name="os" colspan="4"/>
+                            <field name="processor" colspan="4"/>
+                            <field name="memory_ids" colspan="4">
+                                <tree>
+                                    <field name="banklabel"/>
+                                    <field name="capacity"/>
+                                    <field name="devicelocator"/>
+                                </tree>
+                            </field>
+                            <field name="harddisk_ids" colspan="4">
+                                <tree>
+                                    <field name="caption"/>
+                                    <field name="size"/>                                    
+                                </tree>                                
+                            </field>                            
+                        </page>
+                        <page string="Software">
+                            <field name="assets_software_ids" colspan="4" nolabel="1">
+                                <tree>
+                                    <field name='sofware_id'/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Maintenance">
+                            <field name="assets_maintenance_ids" colspan="4" nolabel="1">
+                                <tree>
+                                    <field name='maint_date'/>
+                                    <field name='state'/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Scan">
+                            <field name="last_scan"/>
+                            <field name="scan_status"/>
+                        </page>                 
+                    </notebook>
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_asset_assets_tree">
+            <field name="name">asset.assets.tree</field>
+            <field name="model">asset.assets</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Assets">
+                    <field name="barcode"/>                            
+                    <field name="name"/>                            
+                    <field name="type"/>                           
+                    <field name="company"/>                           
+                    <field name="department"/>                           
+                    <field name="owner"/>  	
+                    <field name="location"/>  		
+                    <field name="status"/>  		
+                    <field name="last_scan"/>  		
+                </tree>
+            </field>
+        </record>
+                
+        <!-- ASSET|SEARCH VIEW  -->
+
+        <record id="view_assets_filter" model="ir.ui.view">
+            <field name="name">Assets Search</field>
+            <field name="model">asset.assets</field>
+            <field name="arch" type="xml">
+                <search string="Search Assets">                    
+                    <field name="barcode"/>   
+                    <field name="name"/>                    
+                    <field name="department"/>                    
+                    <field name="status"/>                    
+                    <field name="maint_month"/>                    
+                    <field name="pi_month"/>                                        
+                    <group expand="0" string="Group By...">
+                        <filter string="Company" icon="terp-partner" domain="[]" help="Company" context="{'group_by':'company'}" />
+                        <filter string="Department" icon="terp-partner" domain="[]" help="Department" context="{'group_by':'department'}" />
+                        <filter string="Type" icon="terp-partner" domain="[]" help="Type" context="{'group_by':'type'}" />
+                        <filter string="Status" icon="terp-partner" domain="[]" help="Status" context="{'group_by':'status'}" />
+                        <filter string="Maintenance Month" icon="terp-partner" domain="[]" help="Maintenance Month" context="{'group_by':'maint_month'}" />                                                                                                
+                        <filter string="PI Month" icon="terp-partner" domain="[]" help="PI Month" context="{'group_by':'pi_month'}" />                                                                                                
+                    </group>
+                </search>
+            </field>
+        </record>        
+                                      
+        <record id="sequence_asset_barcode_type" model="ir.sequence.type">
+            <field name="name">Asset Barcode</field>
+            <field name="code">asset.barcode.sequence</field>
+        </record>
+        
+        <record id="sequence_asset_barcode" model="ir.sequence">
+            <field name="name">Asset Sequence Barcode</field>
+            <field name="code">asset.barcode.sequence</field>            
+            <field name="padding" eval="5"/>
+        </record>
+          
+        <!-- ASSETS/ACTION -->
+	<record model="ir.actions.act_window" id="action_asset_type">
+            <field name="name">Asset Type</field>
+            <field name="res_model">asset.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>		
+        
+        <record model="ir.actions.act_window" id="action_asset_status">
+            <field name="name">Asset Status</field>
+            <field name="res_model">asset.status</field>
+            <field name="view_mode">tree,form</field>
+        </record>		                
+
+        <record model="ir.actions.act_window" id="action_asset_location">
+            <field name="name">Asset Location</field>
+            <field name="res_model">asset.location</field>
+            <field name="view_mode">tree,form</field>
+        </record>		                
+        
+        <record model="ir.actions.act_window" id="action_asset_software">
+            <field name="name">Asset Softweare</field>
+            <field name="res_model">asset.software</field>
+            <field name="view_mode">tree,form</field>
+        </record>		                
+                                                                
+        <record model="ir.actions.act_window" id="action_asset_assets">
+            <field name="name">Assets</field>
+            <field name="res_model">asset.assets</field>
+            <field name="view_mode">tree,form</field>
+        </record>	
+                        
+        
+        	
+    </data>                
+</openerp>

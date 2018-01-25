@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+   W
+            
+    <report id="itms_assets_list_report_webkit"
+            name="itms.assets.list.report.webkit"
+            auto="False"
+            model="asset.assets"
+            file="jakc_assets_webkit_report/report/itms_assets_list.mako"
+            string="Assets List"
+            webkit_header="base_headers_webkit.base_reports_portrait_header"
+            report_type="webkit"/>           
+                       
+  </data>
+</openerp>

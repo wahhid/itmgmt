@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<openerp>
+    <data>
+        <menuitem id="itms_main_menu" name="ITMS"/>			
+	<menuitem name="General" id="base.general_menu" parent="itms_main_menu"/>	
+                
+        <!-- ITMS/VENDOR -->
+		
+        <record model="ir.ui.view" id="view_itms_vendor_form">
+            <field name="name">itms.vendor.form</field>
+            <field name="model">itms.vendor</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Vendor">  
+                    <group>                            
+                        <field name="name"/>                            
+                    </group>
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_itms_vendor_tree">
+            <field name="name">itms.vendor.tree</field>
+            <field name="model">itms.vendor</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Vendor">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+
+        <!-- ITMS/COMPANY -->
+		
+        <record model="ir.ui.view" id="view_itms_company_form">
+            <field name="name">itms.vendor.form</field>
+            <field name="model">itms.company</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Company">  
+                    <group>                         
+                        <field name="company_id"/>                            
+                        <field name="name"/>                            
+                    </group>
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_itms_company_tree">
+            <field name="name">itms.company.tree</field>
+            <field name="model">itms.company</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Company">
+                    <field name="company_id"/>                            
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+               
+        <!-- ITMS/ACTION -->
+        <!-- VENDOR -->
+	<record model="ir.actions.act_window" id="action_itms_vendor">
+            <field name="name">Vendor</field>
+            <field name="res_model">itms.vendor</field>
+            <field name="view_mode">tree,form</field>
+        </record>		
+        <!-- COMPANY -->
+	<record model="ir.actions.act_window" id="action_itms_company">
+            <field name="name">Company</field>
+            <field name="res_model">itms.company</field>
+            <field name="view_mode">tree,form</field>
+        </record>		
+
+        <!-- COMPANY -->
+	<record model="ir.actions.act_window" id="action_itms_department">
+            <field name="name">Department</field>
+            <field name="res_model">hr.department</field>
+            <field name="view_mode">tree,form</field>
+        </record>		
+
+                                                                                                                                
+        <!-- ASSETS/MENU -->
+        <!-- GENERAL -->
+        <menuitem id="company_menu" name="Company" parent="base.general_menu"  action="action_itms_company" sequence="1"/>
+        <menuitem id="vendor_menu" name="Vendor" parent="base.general_menu"  action="action_itms_vendor" sequence="2"/>        
+        <menuitem id="department_menu" name="Department" parent="base.general_menu"  action="action_itms_department" sequence="3"/>        
+        	
+    </data>                
+</openerp>
