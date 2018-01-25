@@ -1,2 +1,0 @@
-import jakc_redemption_tenant
-import jakc_redemption_customer

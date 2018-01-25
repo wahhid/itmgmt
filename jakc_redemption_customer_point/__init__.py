@@ -1,2 +1,0 @@
-import jakc_redemption_customer_point
-import jakc_redemption_customer
