@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_rdm_customer_coupon_manager,rdm.customer.coupon.manager,model_rdm_customer_coupon,base.group_rdm_manager,1,1,1,1
+access_rdm_customer_coupon_officer,rdm.customer.coupon.officer,model_rdm_customer_coupon,base.group_rdm_officer,1,1,1,0
+access_rdm_customer_coupon_operator,rdm.customer.coupon.operator,model_rdm_customer_coupon,base.group_rdm_operator,1,1,1,0
+
+access_rdm_customer_coupon_detail_manager,rdm.customer.coupon.detail.manager,model_rdm_customer_coupon_detail,base.group_rdm_manager,1,1,1,1
+access_rdm_customer_coupon_detail_officer,rdm.customer.coupon.detail.officer,model_rdm_customer_coupon_detail,base.group_rdm_officer,1,1,1,0
+access_rdm_customer_coupon_detail_operator,rdm.customer.coupon.detail.operator,model_rdm_customer_coupon_detail,base.group_rdm_operator,1,1,1,0
